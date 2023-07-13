@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-1234
+
 # Copyright (c) 2021-2023 tteck
 # Author: tteck (tteckster)
 # License: MIT
@@ -416,7 +416,7 @@ pvesm alloc $STORAGE $VMID $DISK0 4M 1>&/dev/null
 qm importdisk $VMID ${FILE%.*} $STORAGE ${DISK_IMPORT:-} 1>&/dev/null
 qm set $VMID \
   -efidisk0 ${DISK0_REF}${FORMAT} \
-  -scsi0 ${DISK1_REF},${DISK_CACHE}${THIN}size=32G \
+  -scsi0 ${DISK1_REF},${DISK_CACHE}${THIN}size=16G \
   -boot order=scsi0 \
   -description "# Home Assistant OS
 ### https://github.com/tteck/Proxmox
